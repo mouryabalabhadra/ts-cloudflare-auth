@@ -1,0 +1,55 @@
+{
+  "name": "@mouryabalabhadra/ts-cloudflare-auth",
+  "version": "0.1.0",
+  "description": "Reusable ThoughtSpot OAuth + bearer auth layer for Cloudflare Workers MCP servers",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "format": "biome format --write",
+    "lint": "biome lint",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "thoughtspot",
+    "mcp",
+    "oauth",
+    "cloudflare",
+    "workers"
+  ],
+  "author": "ThoughtSpot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mouryabalabhadra/ts-cloudflare-auth.git"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-oauth-provider": "^0.0.5",
+    "hono": "^4.12.21"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@cloudflare/workers-oauth-provider": "^0.0.5",
+    "@cloudflare/workers-types": "^4.20250612.0",
+    "@types/node": "^22.15.3",
+    "hono": "^4.12.21",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
