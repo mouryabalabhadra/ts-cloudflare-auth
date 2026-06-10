@@ -24,6 +24,7 @@
     "test": "vitest run",
     "format": "biome format --write",
     "lint": "biome lint",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
